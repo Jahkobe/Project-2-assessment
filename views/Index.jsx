@@ -1,5 +1,5 @@
 const React = require('react');
-const Default = require('./Default');
+
 
 
 class Index extends React.Component {    

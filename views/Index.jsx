@@ -21,19 +21,25 @@ class Index extends React.Component {
                                
                         
                             <hr/>
-
+<ul>
                             {
-                                lists && lists.map((list)=>{
+                                
+                                this.props.lists.map((list)=>{
                                     return(
                                        
                                         <>
                                         <p class="listitem"><br/>
                                             {list.todotext}<br></br>                                 
                                         </p> <br/>
+                                        <form action={`/lists/${list._id}?_method=DELETE`} method="POST">
+                                                <input type="submit" value="Delete"/>
+                                        </form>
                                         </>
                                     )
                                 })
+                                
                             }
+</ul>
                              {
                             <form action="/lists" method="POST">   
                                 <input type="text" name="todotext"/>

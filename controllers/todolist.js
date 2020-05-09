@@ -15,9 +15,10 @@ router.get('/', (req, res) => {
 
 // Create
 router.post('/', (req, res) => {
-    Todo.create(req.body, (error, createdList)=>{
+    Todo.create(req.body, (error, createdList) => {
+        console.log(req.body)
         res.redirect('/lists');
-    })
+    })    
     
 
 });
@@ -26,8 +27,8 @@ router.post('/', (req, res) => {
 // Delete
 router.delete('/:id', (req, res) => {
     // Delete document from collection
-    Player.findByIdAndRemove(req.params.id, (err, player) => {
-        res.redirect('/players');
+    Todo.findByIdAndRemove(req.params.id, (err, list) => {
+        res.redirect('/lists');
     });
 });
 

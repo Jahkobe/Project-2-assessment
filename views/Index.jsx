@@ -28,7 +28,7 @@ class Index extends React.Component {
                                        
                                         <>
                                         <p class="listitem"><br/>
-                                            <a href={`/lists/${lists._id}`}>{list.todotext}</a>  <br></br>                                 
+                                            {list.todotext}<br></br>                                 
                                         </p> <br/>
                                         </>
                                     )

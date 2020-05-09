@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
 
 // Create
 router.post('/', (req, res) => {
-        
-    res.send("recieved");
+    Todo.create(req.body, (error, createdList)=>{
+        res.redirect('/lists');
+    })
+    
 
 });
 

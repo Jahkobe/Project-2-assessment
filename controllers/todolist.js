@@ -7,8 +7,11 @@ const Todo = require('../models/todolist.js');
 
 // Index
 router.get('/', (req, res) => {
-    Todo.find({}, (error, lists) => {
-        res.render('Index')
+    Todo.find({}, (error, listItem) => {
+        res.render('Index', {
+            lists: listItem
+        })
+        
     })
 });
 
@@ -16,7 +19,7 @@ router.get('/', (req, res) => {
 // Create
 router.post('/', (req, res) => {
     Todo.create(req.body, (error, createdList) => {
-        console.log(req.body)
+        // console.log(req.body)
         res.redirect('/lists');
     })    
     

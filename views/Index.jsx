@@ -7,6 +7,9 @@ class Index extends React.Component {
     render() {
         const todosArr = [];
         const { lists } = this.props;
+        
+
+
 
         if(todosArr.length === 0){
             <h3> There are no Todos Yet!</h3>
@@ -17,14 +20,19 @@ class Index extends React.Component {
                 <div class="containerr">
                          
                             <h1 class="indexheader">ToDo List</h1>
-                               
+                            <form action="/lists" method="POST">   
+                                <input type="text" name="todotext"/>
+                                <input type="submit" name=""  value="Create List"/>
+                                <button></button>
+
+                            </form>
                                
                         
                             <hr/>
 <ul>
                             {
                                 
-                                this.props.lists.map((list)=>{
+                                lists.map((list)=>{
                                     return(
                                        
                                         <>
@@ -41,11 +49,7 @@ class Index extends React.Component {
                             }
 </ul>
                              {
-                            <form action="/lists" method="POST">   
-                                <input type="text" name="todotext"/>
-                                <input type="submit" name=""  value="Create List"/>
-
-                            </form>
+                        
     }
 
                         <div>
